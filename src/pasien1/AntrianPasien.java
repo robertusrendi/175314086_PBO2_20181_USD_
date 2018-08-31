@@ -17,11 +17,12 @@ public class AntrianPasien {
     private int nomorAntrian = 0;
     private final int JUMLAH_MAKSIMAL_PASIEN = 50;
     private Pasien[] daftarPasien = new Pasien[JUMLAH_MAKSIMAL_PASIEN];
-/**
- * 
- * @param pasien
- * @throws Exception 
- */
+
+    /**
+     *
+     * @param pasien
+     * @throws Exception
+     */
     public void mendaftar(Pasien pasien) throws Exception {
         if (nomorAntrian < JUMLAH_MAKSIMAL_PASIEN) {
             daftarPasien[nomorAntrian] = pasien;
@@ -31,13 +32,17 @@ public class AntrianPasien {
 
         }
         /**
-         * 
+         *
          */
-    }public Pasien panggilPasien(int nomorAntrian){
-            if (this.nomorAntrian < JUMLAH_MAKSIMAL_PASIEN) {
-                
-            }
-            return daftarPasien[nomorAntrian];
-            
+    }
+
+    public Pasien panggilPasien(int nomorAntrian) throws Exception {
+        if (this.nomorAntrian < JUMLAH_MAKSIMAL_PASIEN) {
+
+        } else {
+            throw new Exception("Antrian Habis");
+        }
+        return null;
+
     }
 }
